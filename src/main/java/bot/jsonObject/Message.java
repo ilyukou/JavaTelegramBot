@@ -1,31 +1,32 @@
-package bot.updates;
+package bot.jsonObject;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+
+import bot.jsonObject.Chat;
+import bot.jsonObject.From;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Message {
 
-	@SerializedName("message_id")
-	@Expose
-	private Integer messageId;
-	@SerializedName("from")
-	@Expose
+	@JsonProperty("message_id")
+	private Long messageId;
+
+	@JsonProperty("from")
 	private From from;
-	@SerializedName("chat")
-	@Expose
+
+	@JsonProperty("chat")
 	private Chat chat;
-	@SerializedName("date")
-	@Expose
+
+	@JsonProperty("date")
 	private Integer date;
-	@SerializedName("text")
-	@Expose
+
+	@JsonProperty("text")
 	private String text;
 
-	public Integer getMessageId() {
+	public Long getMessageId() {
 		return messageId;
 	}
 
-	public void setMessageId(Integer messageId) {
+	public void setMessageId(Long messageId) {
 		this.messageId = messageId;
 	}
 

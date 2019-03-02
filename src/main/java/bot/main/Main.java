@@ -1,22 +1,23 @@
 package bot.main;
 
+import bot.jsonObject.getUpdates.TelegramResponse;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.concurrent.TimeUnit;
+
 public class Main {
+    public static final int DELAY_IN_MILLISECONDS = 640;
 
 	public static void main(String[] args) throws Exception {
-		
-		httpsRequest httpsRequest = new httpsRequest();
-		
-		String chat_id = "265752309";
-		String text = "from main";
-		
-		httpsRequest.getUpdates();
-		httpsRequest.sendMessage(chat_id,text);
-		httpsRequest.sendLocation(chat_id, 23.788637, 53.717239);
-		
-		
-		
-		
-		
-		
+
+		RestTemplate rest = new RestTemplate();
+        UpdateHandler handler = new UpdateHandler();
+
+        while (true){
+            TelegramResponse update = rest.getForObject(TelegramAPIUrlBuilder.buildUrlForGetUpdates(), TelegramResponse.class);
+            handler.handle(update);
+            TimeUnit.MILLISECONDS.sleep(DELAY_IN_MILLISECONDS);
+
+        }
 	}
 }

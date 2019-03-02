@@ -1,15 +1,14 @@
-package bot.updates;
+package bot.jsonObject.getUpdates;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+import bot.jsonObject.Message;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Result {
 
-	@SerializedName("update_id")
-	@Expose
+	@JsonProperty("update_id")
 	private Integer updateId;
-	@SerializedName("message")
-	@Expose
+
+	@JsonProperty("message")
 	private Message message;
 
 	public Integer getUpdateId() {
