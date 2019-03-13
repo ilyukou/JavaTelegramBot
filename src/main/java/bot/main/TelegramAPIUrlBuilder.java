@@ -50,7 +50,7 @@ public class TelegramAPIUrlBuilder {
     }
 
     public static String buildUrl(String method, String date) {
-        String TOKEN = "778752898:AAEVdKRlxalz33hrH1gFfnsq-R7R28_HwGA";
+        String TOKEN = "";
 
         if (date.length() == 0) {
             return "https://api.telegram.org/bot" + TOKEN + "/" + method;

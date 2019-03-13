@@ -63,7 +63,7 @@ public class httpsRequest {
 
 	
     public void sendMethod(String method, String date) throws Exception{
-    	 String TOKEN = "778752898:AAEVdKRlxalz33hrH1gFfnsq-R7R28_HwGA";
+    	 String TOKEN = "";
 
     	if(date.length() == 0) {
 

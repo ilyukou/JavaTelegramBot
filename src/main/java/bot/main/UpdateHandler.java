@@ -8,8 +8,11 @@ import bot.model.User;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class UpdateHandler {
-    UserRepository userRepository = new HashSetUserRepository();
+
+
+    HashSetUserRepository userRepository =  new HashSetUserRepository();
 
     public void handle(TelegramResponse update){
 

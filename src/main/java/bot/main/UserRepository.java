@@ -1,4 +1,4 @@
-package bot.main;
+/*package bot.main;
 
 import bot.model.User;
 
@@ -12,3 +12,4 @@ public interface UserRepository {
 
     void updateUser(User user);
 }
+*/
